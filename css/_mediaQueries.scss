@@ -1,0 +1,81 @@
+@import './_mixins.scss';
+
+// WideScreens
+@include mediaXl {
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// Desktop screens and laptops
+@include mediaLg {
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// Tablette and some laptops screens
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+
+        .lg-heading {
+            margin-bottom: 1rem;
+            font-size: 65px !important;
+            margin-top: 10vh;
+            line-height: 1;
+        }
+
+        &#home {
+            .sm-heading {
+                font-size: 30px !important;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    .about-info {
+        grid-template-areas: 'bio-img' 'bio' 'job1' 'job2' 'job3';
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// Smartphones
+@include mediaSm {
+    main#home h1 {
+        margin-top: 10vh;
+    }
+
+    .menu-branding,
+    .menu-nav {
+        float: none;
+        width: 100%;
+    }
+
+    .menu-branding {
+        height: 25vh;
+        transform: translate3d(-100%, 0, 0);
+        @include easeOut;
+        .portrait {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .menu-nav {
+        height: 75vh;
+        transform: translate3d(100%, 0, 0);
+        @include easeOut;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+

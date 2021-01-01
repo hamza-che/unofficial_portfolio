@@ -1,0 +1,209 @@
+body {
+	position: relative;
+	min-height: 100%;
+	@include background;
+	color: set-text-color($primary-color);
+	line-height: 1.5;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+	&.lg-heading {
+		font-size: 6rem;
+	}
+	&.sm-heading {
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		padding: 0.2rem 1rem;
+		background: rgba(lighten($primary-color, 2), .5);
+	}
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+}
+
+.text-secondary {
+	color: $secondary-color;
+}
+
+main {
+	padding: 4rem;
+	min-height: calc(100vh - 60px);
+
+	&#home {
+		overflow: hidden;
+		h1 {
+			margin-top: 20vh;
+		}
+	}
+
+	.icons {
+		margin-top: 1rem;
+
+		a {
+			padding: .4rem;
+			&:hover {
+				color: $secondary-color;
+				@include easeOut();
+			}
+		}
+	}
+}
+
+// Start About Me
+
+.about-info {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-areas: 
+	'bio-img bio bio'
+	'job1 job2 job3';
+	grid-template-columns: repeat(3, 1fr);
+
+	.bio-img {
+		grid-area: bio-img;
+		margin: auto;
+		border-radius: 50%;
+		border: 3px solid $secondary-color;
+	}
+	
+	.bio {
+		grid-area: bio;
+		font-size: 1.4rem;
+	}
+	
+	.job {
+		background: lighten($primary-color, 5);
+		padding: 0.5rem;
+		border-bottom: 5px solid $secondary-color;
+	}
+	
+	.job-1 {
+		grid-area: job1;
+	}
+	
+	.job-2 {
+		grid-area: job2;
+	}
+	
+	.job-3 {
+		grid-area: job3;
+	}
+}
+
+// End of about me section
+
+// Start My Work Section
+
+.projects {
+	display: grid;
+	grid-gap: 1rem;
+
+	img {
+		max-width: 100%;
+		border: 5px solid #FFF;
+		@include easeOut;
+
+		&:hover {
+			opacity: .5;
+			border-color: $secondary-color;
+		}
+	}
+
+	.btn-light,
+	.btn-dark {
+		@extend %btn;
+	}
+
+	.btn-light {
+		background: lighten($primary-color, 60);
+		color: #333;
+	}
+
+	.btn-dark {
+		background: darken($primary-color, 10);
+
+		&:hover {
+			color: #333;
+		}
+	}
+}
+
+// End of My Work Section
+
+// Start Conact Section
+
+#contact {
+	.boxes {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-top: 1.5rem;
+		text-transform: capitalize;
+
+		div {
+			padding: 1.5rem 2.5rem;
+			border: 5px solid #FFF;
+			margin-bottom: 3rem;
+			font-size: 2rem;
+			@include easeOut;
+
+			&:hover {
+				padding: 0.5rem 1.5rem;
+				background: $secondary-color;
+				color: set-text-color($secondary-color);
+
+				span {
+					color: set-text-color($secondary-color);
+				}
+			}
+		}
+	}
+}
+
+// End of Conact Section
+
+// Start Footer
+
+#main-footer {
+	height: 60px;
+	padding: 1rem;
+	text-align: center;
+	background: darken($primary-color, 10);
+	color: set-text-color($primary-color);
+
+	p {
+		margin: 0;
+	}
+}
+
+// End of footer
+
+// Extends
+%btn {
+	display: block;
+	padding: .5rem 1rem;
+	margin-bottom: .2rem;
+	text-align: center;
+	font-size: 1.2rem;
+	border: none;
+
+	&:hover {
+		background-color: $secondary-color;
+		color: set-text-color($secondary-color);
+	}
+}

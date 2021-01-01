@@ -1,0 +1,63 @@
+* {
+	box-sizing: border-box;
+}
+
+@mixin easeOut {
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	-o-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+
+@mixin background {
+	@if $show-home-image {
+		&#bg-img {
+			background: $home-background;
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+			overflow: hidden;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			z-index: -1;
+			background: rgba($primary-color, $background-opacity);
+		}
+	}
+}
+
+// Set Text Color
+@function set-text-color($color) {
+	@if (lightness($color) > 40) {
+		@return #000; 
+	} @else {
+		@return #FFF;
+	}
+}
+
+// Media query mixins
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170) {
+        @content;
+    }
+}
+@mixin mediaXl {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}
