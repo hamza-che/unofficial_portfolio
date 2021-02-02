@@ -263,8 +263,7 @@ main .icons a:hover {
   display: -ms-grid;
   display: grid;
   grid-gap: 30px;
-      grid-template-areas: 'bio-img bio bio'
- 'job1 job2 job3';
+      grid-template-areas: 'bio-img bio bio' 'job1 job2 job3';
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
 }
@@ -357,7 +356,7 @@ main .icons a:hover {
 }
 
 #contact .boxes div {
-  padding: 1.5rem 2.5rem;
+  padding: .5rem 1.5rem;
   border: 5px solid #FFF;
   margin-bottom: 3rem;
   font-size: 2rem;
@@ -366,7 +365,7 @@ main .icons a:hover {
 }
 
 #contact .boxes div:hover {
-  padding: 0.5rem 1.5rem;
+  padding: .2rem .5rem;
   background: #eece1a;
   color: #000;
 }
