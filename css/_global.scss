@@ -155,14 +155,14 @@ main {
 		margin-top: 1.5rem;
 
 		div {
-			padding: 1.5rem 2.5rem;
+			padding: .5rem 1.5rem;
 			border: 5px solid #FFF;
 			margin-bottom: 3rem;
 			font-size: 2rem;
 			@include easeOut;
 
 			&:hover {
-				padding: 0.5rem 1.5rem;
+				padding: .2rem .5rem;
 				background: $secondary-color;
 				color: set-text-color($secondary-color);
 
